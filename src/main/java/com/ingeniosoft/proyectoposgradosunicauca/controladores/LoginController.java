@@ -29,11 +29,12 @@ public class LoginController {
     private String username;
     private String password;
     private boolean logeado;
-    private List<String> listaDirectorios;
+
+    private final List<String> listaDirectorios;
     private int actual;
-    private int cantidadMuelas;
+    private final int CANTIDAD_MUELAS = 32;
     // partes = {arriba, izquierda, centro, derecha, abajo}
-    private int partes;
+    private final int PARTES_MUELA = 5;
     /**
      * datosMuelas.get(i): estados de la muela número i datosMuelas.get(i)[] =
      * {estado_muela_i_arriba, estado_muela_i_izquierda, estado_muela_i_centro,
@@ -42,17 +43,17 @@ public class LoginController {
     List<int[]> datosMuelas;
 
     private boolean adulto;
-    int interador;
+    
     int numAdultos = 8;
-    int[] plantillaDientesAdulto = {
+    int[] idsDientesAdulto = {
         18, 17, 16, 15, 14, 13, 12, 11, 21, 22, 23, 24, 25, 26, 27, 28,
         48, 47, 46, 45, 44, 43, 42, 41, 31, 32, 33, 34, 35, 36, 37, 38
     };
 
-    int numInfantil = 5;
-    int[] plantillaDientesInfantil = {
-        55, 54, 53, 52, 51, 61, 62, 63, 64, 65,
-        85, 84, 83, 82, 81, 71, 72, 73, 74, 75
+    int numInfantil = 6;
+    int[] idsDientesInfantil = {
+        55, 54, 53, 52, 51, 61, 62, 63, 64, 65, 64, 65,
+        85, 84, 83, 82, 81, 71, 72, 73, 74, 75, 64, 65,
     };
 
     /**
@@ -71,8 +72,8 @@ public class LoginController {
     }
 
     /**
-     * obtiene el indice final del bloque identificado por numbloque, de
-     * acuerdo a que si es adulto o infantil.
+     * obtiene el indice final del bloque identificado por numbloque, de acuerdo
+     * a que si es adulto o infantil.
      *
      * @param numbloque
      * @return
@@ -85,21 +86,36 @@ public class LoginController {
         }
     }
 
+    public int idDiente(int indice) {
+        if (adulto) {
+            return idsDientesAdulto[indice];
+        } else {
+            return idsDientesInfantil[indice];
+        }
+    }
+
+    public boolean isAdulto() {
+        return adulto;
+    }
+
+    public void setAdulto(boolean adulto) {
+        this.adulto = adulto;
+    }
+
+    
     /**
      * Creates a new instance of LoginController
      */
     public LoginController() {
         username = "anderson";
-        adulto = true;
-        interador = 0;
-        cantidadMuelas = 20;
-        partes = 5;
+
+        adulto = false;
         listaDirectorios = new ArrayList();
         listaDirectorios.add("normal/");
         listaDirectorios.add("caries/");
 
-        datosMuelas = new ArrayList(cantidadMuelas);
-        for (int i = 0; i < cantidadMuelas; i++) {
+        datosMuelas = new ArrayList(CANTIDAD_MUELAS);
+        for (int i = 0; i < CANTIDAD_MUELAS; i++) {
             datosMuelas.add(new int[5]);
         }
         datosMuelas.get(1)[0] = 1;
@@ -128,10 +144,9 @@ public class LoginController {
         System.out.println("definirActual->actual: " + actual);
     }
 
-    public int getCantidadMuelas() {
-        return cantidadMuelas;
-    }
-
+//    public int getCantidadMuelas() {
+//        return cantidadMuelas;
+//    }
     public String estado(int i_esima_muela, int indiceParte, String cad) {
         System.out.println("estado->i-esima-muela:" + i_esima_muela + "; indiceParte:" + indiceParte + "; cad: " + cad);
         int[] muela_i = datosMuelas.get(i_esima_muela);

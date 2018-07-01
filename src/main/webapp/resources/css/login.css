@@ -12,3 +12,46 @@ and open the template in the editor.
     display:inline;
 }*/
 
+.conjunto_muelas 
+{
+    margin: 10px 0px;
+}
+
+.conjunto_muelas td{
+    width: 55px;
+    border: 1px solid #ff0000;
+}
+
+#tb_principal {
+    width: 1000px; 
+    margin: auto;
+}
+
+#tb_principal , #tb_principal.mandibula, #tb_principal.mandibula.lateral_mandibula {
+    border: 1px solid;
+    border-collapse: collapse;
+}
+
+.lateral_mandibula {
+    display: inline-table;
+    width: 49.8%;
+    border-color: gainsboro; 
+    /*border: 1px ridge aqua;*/
+    /*margin-bottom: 10px;*/
+}
+
+.mandibula {
+    padding: 40px; 
+    /*border: 2px dashed #ff0000;*/ 
+    width: 100%;
+}
+
+.izquierdo {
+    float: right;
+    margin-right: 10px;
+}
+.derecho {
+    margin-left: 10px;
+    /*    padding-left: 20px;
+        border: 1px #ff0000;*/
+}

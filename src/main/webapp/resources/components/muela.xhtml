@@ -1,55 +1,57 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-         xmlns:h="http://java.sun.com/jsf/html"
-         xmlns:f="http://java.sun.com/jsf/core"
-         xmlns:ui="http://java.sun.com/jsf/facelets"
-         xmlns:p="http://primefaces.org/ui"
-         xmlns:composite="http://java.sun.com/jsf/composite">
- <h:head>
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:composite="http://java.sun.com/jsf/composite">
+    <h:head>
 
-   <title>This will not be present in rendered output</title>
+        <title>This will not be present in rendered output</title>
+    </h:head>
 
- </h:head>
+    <h:body>
 
- <h:body>
-	
-   <composite:interface displayName="Input text field with label, input and message components" >
-      <composite:attribute name="item" required="true" />
-      <!--<composite:attribute name="index" required="true" />-->
-   </composite:interface>
+        <composite:interface displayName="Input text field with label, input and message components" >
+            <composite:attribute name="item" required="true" />
+            <composite:attribute name="index" required="true" />
+        </composite:interface>
 
-   <composite:implementation>
-        <span style="margin: auto 2px; text-align: center; display:block">#{cc.attrs.item+1}</span>
-       <div id="der#{item}" class="muela" >
-           <p:commandLink  class="hover lado arriba" actionListener="#{loginController.asignarEstado(cc.attrs.item, 0)}" 
-                            update="@this">
-                <img  class="imagen " src="#{resource[loginController.estado(cc.attrs.item, 0,'abajo.svg')]}" type="image/svg+xml"></img>
-            </p:commandLink>
-            <p:commandLink class="hover lado derecha" actionListener="#{loginController.asignarEstado(cc.attrs.item, 3)}"
-                           update="@this">
-                <img class="imagen " src="#{resource[loginController.estado(cc.attrs.item, 3,'izquierdo.svg')]}" type="image/svg+xml"></img>
-            </p:commandLink>
+        <composite:implementation>
+            <!--<h:outputStylesheet library="css" name="/muelas.css"/>-->
+            <h:outputStylesheet name="css/muela.css"/>
 
-            <p:commandLink ajax="true" class="hover lado izquierda" actionListener="#{loginController.asignarEstado(cc.attrs.item, 1)}"  
-                           update="@this">
-                <img class="imagen " src="#{resource[loginController.estado(cc.attrs.item, 1,'izquierdo.svg')]}" type="image/svg+xml"></img>
-            </p:commandLink>
+            <span style="margin: auto 2px; text-align: center; display:block">#{cc.attrs.index}</span>
+            <span style="margin: auto 2px; text-align: center; display:block">#{cc.attrs.item+1}</span>
+            <div id="der#{item}" class="muela" >
+                <p:commandLink  class="hover lado arriba" actionListener="#{loginController.asignarEstado(cc.attrs.item, 0)}" 
+                                update="@this">
+                    <img  class="imagen " src="#{resource[loginController.estado(cc.attrs.item, 0,'abajo.svg')]}" type="image/svg+xml"></img>
+                </p:commandLink>
+                <p:commandLink class="hover lado derecha" actionListener="#{loginController.asignarEstado(cc.attrs.item, 3)}"
+                               update="@this">
+                    <img class="imagen " src="#{resource[loginController.estado(cc.attrs.item, 3,'izquierdo.svg')]}" type="image/svg+xml"></img>
+                </p:commandLink>
 
-            <p:commandLink ajax="true" class="hover lado abajo" actionListener="#{loginController.asignarEstado(cc.attrs.item, 4)}"  
-                           update="@this" >
-                <h:graphicImage class="imagen " value="#{resource[loginController.estado(cc.attrs.item, 4,'abajo.svg')]}" />
-            </p:commandLink>
+                <p:commandLink ajax="true" class="hover lado izquierda" actionListener="#{loginController.asignarEstado(cc.attrs.item, 1)}"  
+                               update="@this">
+                    <img class="imagen " src="#{resource[loginController.estado(cc.attrs.item, 1,'izquierdo.svg')]}" type="image/svg+xml"></img>
+                </p:commandLink>
 
-            <p:commandLink ajax="true" class="hover centro imagen_centro" actionListener="#{loginController.asignarEstado(cc.attrs.item, 2)}"  
-                           update="@this">
-                <img class="imagen " src="#{resource[loginController.estado(cc.attrs.item, 2,'centro.svg')]}" ></img>
-            </p:commandLink>
+                <p:commandLink ajax="true" class="hover lado abajo" actionListener="#{loginController.asignarEstado(cc.attrs.item, 4)}"  
+                               update="@this" >
+                    <h:graphicImage class="imagen " value="#{resource[loginController.estado(cc.attrs.item, 4,'abajo.svg')]}" />
+                </p:commandLink>
 
-        </div>
-   
-   </composite:implementation>
+                <p:commandLink ajax="true" class="hover centro imagen_centro" actionListener="#{loginController.asignarEstado(cc.attrs.item, 2)}"  
+                               update="@this">
+                    <img class="imagen " src="#{resource[loginController.estado(cc.attrs.item, 2,'centro.svg')]}" ></img>
+                </p:commandLink>
+            </div>
 
- </h:body>
+        </composite:implementation>
+
+    </h:body>
 
 </html>
