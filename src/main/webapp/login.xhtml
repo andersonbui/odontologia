@@ -10,8 +10,8 @@
     <h:head>
         <title>Facelet Title</title>
         <!--<link rel="stylesheet" href="css/login.css">-->
-        <h:outputStylesheet name="css/login.css"/>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"></link>
+        <h:outputStylesheet name="css/login.css"/>
     </h:head>
     <h:body>
         Pagina de logeo #{loginController.username}
@@ -23,7 +23,7 @@
             </div>
         </h:form>
         <h:form id="PacienteListForm">
-            
+
             <ui:repeat value="#{loginController.lista}" var="dato" varStatus="estado"  class="btn-group">
                 <p:commandLink class="btn btn-primary btn-sm" style="margin:5px;" ajax="true" value="#{dato}" actionListener="#{loginController.definirActual(estado.index)}" >
                 </p:commandLink>
@@ -31,74 +31,36 @@
 
             <!--<td><tnt:muela item="1" ></tnt:muela></td>-->
 
-            <div  >
+            <div id="adultos" >
                 <table  id="tb_principal" >
                     <tr class="mandibula" >
                         <td class="lateral_mandibula " style="border-right-style: solid; border-bottom-style: solid; ">
-                            <table class="conjunto_muelas izquierdo" >
-                                <tr>
-                                    <c:forEach begin="#{loginController.inicio(0)}" end="#{loginController.fin(0)}" var="item" varStatus="estado" >
-                                        <td >
-                                            <tnt:muela item="#{item}"  index="#{loginController.idDiente(item)}"></tnt:muela>
-                                        </td>
-                                    </c:forEach>
-                                </tr>
-                            </table>
+                            <div   class="conjunto_muelas izquierdo" >
+                                <tnt:muela bloque="0" ></tnt:muela>
+                            </div>
                         </td>
                         <td class="lateral_mandibula "  style="border-left-style: solid; border-bottom-style: solid; ">
-                            <table class="conjunto_muelas derecho">
-                                <tr>
-                                    <c:forEach begin="#{loginController.inicio(1)}" end="#{loginController.fin(1)}" var="item" varStatus="estado" >
-                                        <td >
-                                            <tnt:muela item="#{item}" index="#{loginController.idDiente(item)}"></tnt:muela>
-                                        </td>
-                                    </c:forEach>
-                                </tr>
-                            </table>
+                            <div class="conjunto_muelas derecho">
+                                <tnt:muela bloque="1" ></tnt:muela>
+                            </div>
                         </td>
                     </tr>
                     <tr class="mandibula" >
                         <td class="lateral_mandibula "  style="border-right-style: solid;  ">
-                            <table class="conjunto_muelas izquierdo">
-                                <tr>
-                                    <c:forEach begin="#{loginController.inicio(2)}" end="#{loginController.fin(2)}" var="item" varStatus="estado" >
-                                        <td >
-                                            <tnt:muela item="#{item}"  index="#{loginController.idDiente(item)}"></tnt:muela>
-                                        </td>
-                                    </c:forEach>
-                                </tr>
-                            </table>
+                            <div class="conjunto_muelas izquierdo">
+                                <tnt:muela bloque="2" ></tnt:muela>
+                            </div>
                         </td>
                         <td class="lateral_mandibula "  style="border-left-style: solid;   ">
-                            <table class="conjunto_muelas derecho" style="   ">
-                                <tr>
-                                    <c:forEach begin="#{loginController.inicio(3)}" end="#{loginController.fin(3)}" var="item" varStatus="estado" >
-                                        <td >
-                                            <tnt:muela item="#{item}" index="#{loginController.idDiente(item)}"></tnt:muela>
-                                        </td>
-                                    </c:forEach>
-                                </tr>
-                            </table>
+                            <div class="conjunto_muelas derecho">
+                                <tnt:muela bloque="3" ></tnt:muela>
+                            </div>
                         </td>
                     </tr>
                 </table>
             </div>
 
-            <!--            <h:dataTable id="tabla" value="{loginController.lista}" var="dato"  >
-                <h:column>
-                    holacomo vas    
-                    <f:facet name="header">
-                        <h:outputText value="valor"></h:outputText>
-                    </f:facet>
-                    <h:column rowHeader="true" class="columna" >
-                    </h:column>
-                </h:column>
-            </h:dataTable>-->
-
-
-            <!--                        </p:column>
-                            </p:row>-->
-            <!--</p:panelGrid>-->
+          
         </h:form>
     </h:body>
 </html>
