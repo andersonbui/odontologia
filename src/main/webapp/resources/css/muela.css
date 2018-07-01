@@ -1,0 +1,82 @@
+.muela {
+    /*margin: auto;*/
+    border-radius: 30%;
+    overflow: hidden;
+    width: 40px;
+    height: 40px;
+    position: relative;
+    border: 2px solid #444444;
+}
+
+.lado{
+    position: absolute;
+}
+
+.centro {
+    border: 0px solid #ff0000;
+    /*background-size: 100% 100%;*/
+    width: 35.4%;
+    height: 35.4%;
+    position: relative;
+    left: 32.4%;
+    top: 32.4%;
+    display: table;
+    /*transform: rotate(0deg);*/
+}
+
+.imagen {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    /*display: table;*/
+}
+
+.lado{
+    /*background-size: 100% 100%;*/
+    width: 76.4%;
+    height: 76.4%;
+}
+
+.izquierda {
+    left: -40%;
+    top: 11.67%;
+    transform: rotate(-45deg);
+}
+
+.derecha {
+    left: 63.2%;
+    top: 11.67%;
+    transform: rotate(135deg);
+}
+
+.arriba {
+    left: 11.67%;
+    top: -40%;
+    transform: rotate(45deg);
+}
+
+.abajo {
+    left: 11.67%;
+    top: 63.7%;
+    transform: rotate(225deg);
+    
+}
+
+.hover:hover {
+    filter:contrast(200%) brightness(200%);
+    /*filter: sepia(100%);*/
+
+}
+
+
+table,
+th,
+td {
+    /*text-align: center;*/
+    border: 1px solid #ffaaaa;
+    /*border-collapse: collapse;*/
+}
+
+td {
+    width: 60px;
+}
