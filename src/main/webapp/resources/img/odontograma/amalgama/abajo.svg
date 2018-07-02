@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="21mm"
+   height="21mm"
+   viewBox="0 0 21 21"
+   version="1.1"
+   id="svg8"
+   inkscape:version="0.92.1 r15371"
+   sodipodi:docname="abajo.svg">
+  <metadata
+     id="metadata11">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs9" />
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1366"
+     inkscape:window-height="703"
+     id="namedview7"
+     showgrid="true"
+     inkscape:zoom="4.2050406"
+     inkscape:cx="-35.414792"
+     inkscape:cy="28.392531"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1">
+    <inkscape:grid
+       type="xygrid"
+       id="grid11" />
+  </sodipodi:namedview>
+  <style
+     type="text/css"
+     id="style2"><![CDATA[
+        .send-icon {
+            fill:#eeeeee;
+            stroke:#444444;
+            stroke-width:1px;
+            stroke-linecap:butt;
+            stroke-linejoin:miter;
+            stroke-opacity:1
+        }
+        .send-icon:hover {
+            /*fill:#d9534f;*/
+            fill:#df53ff;
+        }
+        ]]></style>
+  <!--<link rel="stylesheet" type="text/css"  href="../css/svg.css" >-->
+  <g
+     inkscape:label="Capa 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(0.5,0.5)">
+    <path
+       class="send-icon"
+       d="M 0.00396825,19.996032 V -0.16269834 H 20.162698 V 19.996032 Z"
+       id="path372"
+       inkscape:connector-curvature="0"
+       style="fill:#808080;stroke:#444444;stroke-width:1.00793648px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+  </g>
+</svg>

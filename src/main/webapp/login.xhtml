@@ -17,50 +17,79 @@
         Pagina de logeo #{loginController.username}
         <h:form >
             <div  style="display:block; border: 1px solid black;">
-                <h:selectBooleanCheckbox title="Infantil"  label="Infantil" value="#{loginController.adulto}">
+                <h:selectBooleanCheckbox title="Infantil"  label="Infantil" value="#{loginController.infantil}">
                     <p:ajax update="PacienteListForm" />
                 </h:selectBooleanCheckbox> Odontograma infantil
             </div>
         </h:form>
         <h:form id="PacienteListForm">
 
-            <ui:repeat value="#{loginController.lista}" var="dato" varStatus="estado"  class="btn-group">
-                <p:commandLink class="btn btn-primary btn-sm" style="margin:5px;" ajax="true" value="#{dato}" actionListener="#{loginController.definirActual(estado.index)}" >
+            <c:forEach begin="0" end="#{loginController.tamanioListaDirectorios()}"  var="indice" class="btn-group">
+                <p:commandLink ajax="true" actionListener="#{loginController.definirActual(indice)}" >
+                    <img class="" src='#{resource[loginController.muestra(indice)]}' type="image/svg+xml"></img>
                 </p:commandLink>
-            </ui:repeat>
+            </c:forEach>
 
             <!--<td><tnt:muela item="1" ></tnt:muela></td>-->
 
-            <div id="adultos" >
-                <table  id="tb_principal" >
+            <p:panel id="adultos" rendered="#{loginController.adulto}" >
+                <table  class="tb_principal" >
                     <tr class="mandibula" >
                         <td class="lateral_mandibula " style="border-right-style: solid; border-bottom-style: solid; ">
                             <div   class="conjunto_muelas izquierdo" >
-                                <tnt:muela bloque="0" ></tnt:muela>
+                                <tnt:muela bloque="0" adulto="true"></tnt:muela>
                             </div>
                         </td>
                         <td class="lateral_mandibula "  style="border-left-style: solid; border-bottom-style: solid; ">
                             <div class="conjunto_muelas derecho">
-                                <tnt:muela bloque="1" ></tnt:muela>
+                                <tnt:muela bloque="1" adulto="true"></tnt:muela>
                             </div>
                         </td>
                     </tr>
                     <tr class="mandibula" >
                         <td class="lateral_mandibula "  style="border-right-style: solid;  ">
                             <div class="conjunto_muelas izquierdo">
-                                <tnt:muela bloque="2" ></tnt:muela>
+                                <tnt:muela bloque="2" adulto="true" ></tnt:muela>
                             </div>
                         </td>
                         <td class="lateral_mandibula "  style="border-left-style: solid;   ">
                             <div class="conjunto_muelas derecho">
-                                <tnt:muela bloque="3" ></tnt:muela>
+                                <tnt:muela bloque="3" adulto="true" ></tnt:muela>
                             </div>
                         </td>
                     </tr>
                 </table>
-            </div>
+            </p:panel>
 
           
+            <p:panel id="infantil" rendered="#{!loginController.adulto}" >
+                <table  class="tb_principal" >
+                    <tr class="mandibula" >
+                        <td class="lateral_mandibula " style="border-right-style: solid; border-bottom-style: solid; ">
+                            <div   class="conjunto_muelas izquierdo" >
+                                <tnt:muela bloque="0" adulto="false"></tnt:muela>
+                            </div>
+                        </td>
+                        <td class="lateral_mandibula "  style="border-left-style: solid; border-bottom-style: solid; ">
+                            <div class="conjunto_muelas derecho">
+                                <tnt:muela bloque="1" adulto="false"></tnt:muela>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr class="mandibula" >
+                        <td class="lateral_mandibula "  style="border-right-style: solid;  ">
+                            <div class="conjunto_muelas izquierdo">
+                                <tnt:muela bloque="2" adulto="false" ></tnt:muela>
+                            </div>
+                        </td>
+                        <td class="lateral_mandibula "  style="border-left-style: solid;   ">
+                            <div class="conjunto_muelas derecho">
+                                <tnt:muela bloque="3" adulto="false" ></tnt:muela>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </p:panel>
         </h:form>
     </h:body>
 </html>

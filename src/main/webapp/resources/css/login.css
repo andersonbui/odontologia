@@ -19,22 +19,22 @@ and open the template in the editor.
 
 .conjunto_muelas td{
     width: 55px;
-    border: 1px solid #ff0000;
+    /*border: 1px solid #ff0000;*/
 }
 
-#tb_principal {
+.tb_principal {
     width: 1000px; 
     margin: auto;
 }
 
-#tb_principal , #tb_principal.mandibula, #tb_principal.mandibula.lateral_mandibula {
+.tb_principal , .tb_principal.mandibula, .tb_principal.mandibula.lateral_mandibula {
     border: 1px solid;
     border-collapse: collapse;
 }
 
 .lateral_mandibula {
     display: inline-table;
-    width: 49.8%;
+    width: 495px;
     border-color: gainsboro; 
     /*border: 1px ridge aqua;*/
     /*margin-bottom: 10px;*/
