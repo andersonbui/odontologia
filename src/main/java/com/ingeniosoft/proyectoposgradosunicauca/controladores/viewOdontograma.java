@@ -5,18 +5,10 @@
  */
 package com.ingeniosoft.proyectoposgradosunicauca.controladores;
 
-import java.security.Principal;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
-import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
-import javax.faces.context.ExternalContext;
-import javax.faces.context.FacesContext;
-import javax.servlet.ServletException;
-import javax.servlet.http.HttpServletRequest;
-import org.primefaces.context.RequestContext;
 
 /**
  *
@@ -24,11 +16,7 @@ import org.primefaces.context.RequestContext;
  */
 @ManagedBean(name = "loginController")
 @SessionScoped
-public class LoginController {
-
-    private String username;
-    private String password;
-    private boolean logeado;
+public class viewOdontograma {
 
     private final List<elementoDir> listaDirectorios;
     private int actual;
@@ -54,7 +42,8 @@ public class LoginController {
     private final int NUM_INFANTIL = 6;
     int[] idsDientesInfantil = {
         55, 54, 53, 52, 51, 61, 62, 63, 64, 65,
-        85, 84, 83, 82, 81, 71, 72, 73, 74, 75};
+        85, 84, 83, 82, 81, 71, 72, 73, 74, 75
+    };
 
     /**
      * obtiene el indice inicial del bloque identificado por numbloque, de
@@ -135,8 +124,7 @@ public class LoginController {
     /**
      * Creates a new instance of LoginController
      */
-    public LoginController() {
-        username = "anderson";
+    public viewOdontograma() {
 
         adulto = false;
         listaDirectorios = new ArrayList();
@@ -161,14 +149,6 @@ public class LoginController {
         datosMuelas.get(3)[0] = 1;
     }
 
-    public String getUsername() {
-        return username;
-    }
-
-    public void setUsername(String username) {
-        this.username = username;
-    }
-
     /**
      * obtiene el tamano de laslista de directorio de diferentes tipo de
      * afecciones
@@ -177,10 +157,6 @@ public class LoginController {
      */
     public int tamanioListaDirectorios() {
         return listaDirectorios.size() - 1;
-    }
-
-    public void login(int item, String parte) {
-        System.out.println("login->presionaste: " + item + "; parte: " + parte);
     }
 
     /**
